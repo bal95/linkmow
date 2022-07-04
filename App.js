@@ -13,7 +13,7 @@ const App=()=>{
 
   const getKey=async ()=>{
     try{
-      const res=await fetch('http://10.0.2.2:3000/insert',{
+      const res=await fetch('http://10.0.2.2:3000/insert',{ //Use DynamoDB link by replacing the localhost
         method:'POST',
         headers:{
           'Content-Type':'application/json',
@@ -23,7 +23,7 @@ const App=()=>{
         })
       })
       const key=await res.json()
-      getMowedLink(key==='Invalid Website!'?key:`http://10.0.2.2:3000/${key}`)
+      getMowedLink(key==='Invalid Website!'?key:`http://10.0.2.2:3000/${key}`) //Use DynamoDB link by replacing the localhost
       getServerStatus(false)
       setWebsite('')
     }
